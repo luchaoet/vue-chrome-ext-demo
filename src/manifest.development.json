@@ -1,0 +1,35 @@
+{
+    "manifest_version": 2,
+    "name": "penk-ext",
+    "description": "penk extension by Vue",
+    "version": "1.0.1",
+    "options_page": "options.html",
+    "homepage_url": "https://www.baidu.com",
+    "icons": {
+        "16": "static/images/logo.png",
+        "48": "static/images/logo.png",
+        "128": "static/images/logo.png"
+    },
+    "devtools_page": "devtools.html",
+    "web_accessible_resources": ["fonts/element-icons.woff", "fonts/element-icons.ttf"],
+    "background": {
+        "scripts": ["background/hot-reload.js", "background/index.js"]
+    },
+    "browser_action": {
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [{
+        "matches": [
+            "https://www.baidu.com/*",
+            "https://www.zhihu.com/*"
+        ],
+        "js": [
+            "js/content.js"
+        ],
+        "css": [
+            "css/content.css"
+        ],
+        "run_at": "document_end"
+    }],
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}
