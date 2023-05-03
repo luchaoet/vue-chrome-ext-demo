@@ -1,22 +1,16 @@
-<!--
- * @Author: Penk
- * @LastEditors: Penk
- * @LastEditTime: 2022-07-07 10:44:50
- * @FilePath: \vue-chrome-ext\src\content\App\App.vue
--->
 <template>
-  <div class="penk_app">
+  <div class="c-p-content">
     <h1>Hello {{msg}}</h1>
-    <hello></hello>
+    <Hello />
   </div>
 </template>
 
 <script>
-import hello from "@/components/hello";
+import Hello from "@/components/hello";
 export default {
 	name: "app",
 	components: {
-		hello,
+		Hello,
 	},
 	data() {
 		return {
@@ -30,20 +24,17 @@ export default {
 </script>
 
 <style>
-.penk_app {
-	font-family: "Avenir", Helvetica, Arial, sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	text-align: center;
+.c-p-content {
 	color: #2c3e50;
-	margin-top: 60px;
-
-	position: fixed;
-	top: 0;
-	right: 0;
 	width: 200px;
-	height: 100px;
-
-	background-color: aqua;
+	background-color: #ff7700;
+	position: fixed;
+	top: 40px;
+	right: 10px;
+	z-index: 999;
+	border-radius: 4px;
+	padding: 10px;
+	font-size: 20px;
+	color: #fff;
 }
 </style>
