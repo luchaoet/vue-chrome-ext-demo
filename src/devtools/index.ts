@@ -14,7 +14,7 @@ var data = {
 
 sendMessage(data).then(res => {
   console.log("我接收到了background的信息:", res);
-})
+}).catch(() => { })
 
 
 // 读取相对目录下的文件不用特殊权限，根据这个文件，自动配置panels
@@ -34,7 +34,7 @@ fetch(url).then(function (response) {
   } else {
     return {}
   }
-});
+}).catch(() => { })
 
 // 创建自定义侧边栏
 window.chrome.devtools.panels.elements.createSidebarPane("Images", function (sidebar) {

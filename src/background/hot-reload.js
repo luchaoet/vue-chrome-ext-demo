@@ -16,12 +16,13 @@ const filesInDirectory = dir => new Promise(resolve =>
         ))
             .then(files => [].concat(...files))
             .then(resolve)
+            .catch(() => { })
     )
 )
 
 const timestampForFilesInDirectory = dir =>
     filesInDirectory(dir).then(files =>
-        files.map(f => f.name + f.lastModifiedDate).join())
+        files.map(f => f.name + f.lastModifiedDate).join()).catch(() => { })
 
 const reload = () => {
     window.chrome.tabs.query({
